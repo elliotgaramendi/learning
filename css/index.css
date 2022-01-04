@@ -1,3 +1,102 @@
+:root {
+  --text-color: #000;
+  --theme-color: #fff;
+  --inverse-theme-color: #000;
+  --inverse-text-color: #fff;
+  --shadow-color: #e5e5e5;
+  --show-close-icon: none;
+}
+
 .body {
   font-family: 'Poppins', sans-serif;
+  min-height: 200vh;
+  background-image: url('../img/reactjswallpaper.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 0;
+  transition: all 0.5s;
+}
+
+.header--scroll {
+  background-color: var(--theme-color);
+  box-shadow: 0 0.25rem 0.25rem 0 var(--shadow-color);
+  padding: 0.25rem 0;
+}
+
+.header--scroll>.header-nav>.header-nav__menu-icon {
+  background-color: var(--inverse-theme-color);
+  border-radius: 0.5rem;
+  padding: 0.125rem;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-nav--container {
+  padding: 0 2rem;
+}
+
+.header-nav__logo {
+  display: flex;
+  max-width: 4rem;
+}
+
+.header-nav__img {
+  width: 100%;
+}
+
+.header-nav__link-list {
+  position: fixed;
+  background-color: #000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s;
+}
+
+.header-nav__link-list--open {
+  --show: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.header-nav__link-item {
+  list-style: none;
+}
+
+.header-nav__link {
+  color: var(--inverse-text-color);
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+}
+
+.header-nav__close-icon {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  width: 1.5rem;
+}
+
+.header-nav__menu-icon {
+  width: 1.5rem;
 }
