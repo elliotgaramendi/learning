@@ -1,9 +1,10 @@
 :root {
   --text-color: #000;
   --theme-color: #fff;
-  --inverse-theme-color: #000;
+  --inverse-theme-color: #20232a;
   --inverse-text-color: #fff;
   --shadow-color: #e5e5e5;
+  --hover-color: gold;
   --show-close-icon: none;
 }
 
@@ -25,15 +26,9 @@
 }
 
 .header--scroll {
-  background-color: var(--theme-color);
-  box-shadow: 0 0.25rem 0.25rem 0 var(--shadow-color);
-  padding: 0.25rem 0;
-}
-
-.header--scroll>.header-nav>.header-nav__menu-icon {
   background-color: var(--inverse-theme-color);
-  border-radius: 0.5rem;
-  padding: 0.125rem;
+  box-shadow: 0 0.25rem 0.25rem 0 var(--inverse-theme-color);
+  padding: 0.25rem 0;
 }
 
 .header-nav {
@@ -57,7 +52,7 @@
 
 .header-nav__link-list {
   position: fixed;
-  background-color: #000;
+  background-color: var(--inverse-theme-color);
   top: 0;
   left: 0;
   width: 100%;
@@ -88,6 +83,11 @@
   color: var(--inverse-text-color);
   text-decoration: none;
   letter-spacing: 0.1rem;
+  transition: all 0.2s;
+}
+
+.header-nav__link:hover {
+  border-bottom: 0.2rem solid var(--hover-color);
 }
 
 .header-nav__close-icon {
@@ -99,4 +99,24 @@
 
 .header-nav__menu-icon {
   width: 1.5rem;
+}
+
+@media (min-width: 854px) {
+  .header-nav--container {
+    max-width: 1024px;
+    margin: auto;
+    padding: 0;
+  }
+  .header-nav__link-list {
+    position: static;
+    width: auto;
+    background-color: transparent;
+    flex-direction: row;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .header-nav__close-icon,
+  .header-nav__menu-icon {
+    display: none;
+  }
 }
