@@ -188,6 +188,7 @@
 /* Start about */
 .about {
   text-align: center;
+  padding: 2rem 0;
 }
 
 .about__topics {
@@ -213,14 +214,23 @@
 
 @media (min-width: 854px) {
 
-  /* Start header */
+  /* Start Common Styles */
   .header-nav-container,
-  .main-cover-container {
+  .main-cover-container,
+  .about-container {
     max-width: 1024px;
     margin: auto;
     padding: 0;
   }
 
+  .header-nav__close-icon,
+  .header-nav__menu-icon {
+    display: none;
+  }
+
+  /* End Common Styles */
+
+  /* Start header */
   .header-nav__link-list {
     position: static;
     width: auto;
@@ -228,11 +238,6 @@
     flex-direction: row;
     opacity: 1;
     pointer-events: auto;
-  }
-
-  .header-nav__close-icon,
-  .header-nav__menu-icon {
-    display: none;
   }
 
   /* End header */
