@@ -6,7 +6,7 @@
   --inverse-theme-color: #20232a;
   --inverse-text-color: #fff;
   --code-background-color: rgba(40, 44, 52, 0.75);
-  --hover-color: gold;
+  --highlight-boder-color: gold;
 }
 
 .body {
@@ -15,11 +15,28 @@
 }
 
 /* Start Common Styles */
+.about,
+.knowledge,
+.price {
+  padding: 2rem 0;
+}
+
 .header-nav-container,
 .main-cover-container,
 .about-container,
-.knowledge-container {
+.knowledge-container,
+.price-container {
   padding: 0 2rem;
+}
+
+.header-nav__link-list,
+.main-cover,
+.main-cover-container,
+.price__offer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .main-cover__title,
@@ -27,7 +44,8 @@
 .about__subtitle,
 .about__paragraph,
 .knowledge__subtitle,
-.knowledge__paragraph {
+.knowledge__paragraph,
+.price__subtitle {
   letter-spacing: 0.1rem;
 }
 
@@ -44,7 +62,8 @@
 }
 
 .main-cover__button,
-.knowledge__button {
+.knowledge__button,
+.price__button {
   position: relative;
   z-index: 85;
   display: inline-block;
@@ -58,7 +77,8 @@
 }
 
 .main-cover__button:hover,
-.knowledge__button:hover {
+.knowledge__button:hover,
+.price__button:hover {
   background-color: var(--theme-color);
 }
 
@@ -93,7 +113,7 @@
 
 .header-nav__logo {
   display: flex;
-  max-width: 4rem;
+  width: 4rem;
 }
 
 .header-nav__link-list {
@@ -106,10 +126,6 @@
   gap: 2rem;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   opacity: 0;
   pointer-events: none;
   transition: all 0.5s;
@@ -133,7 +149,7 @@
 
 .header-nav__link:hover {
   color: var(--highlight-color);
-  border-bottom: 0.2rem solid var(--hover-color);
+  border-bottom: 0.2rem solid var(--highlight-boder-color);
 }
 
 .header-nav__close-icon {
@@ -149,10 +165,14 @@
 
 /* End header */
 
-/* Start main-cover */
+/* Start main */
 .main {
   background-color: var(--theme-color);
 }
+
+/* End main */
+
+/* Start main-cover */
 
 .main-cover {
   position: relative;
@@ -161,18 +181,7 @@
   background-size: cover;
   background-position: center;
   color: var(--inverse-text-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   text-align: center;
-}
-
-.main-cover-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .main-cover__message {
@@ -220,24 +229,25 @@
 
 /* Start knowledge */
 .knowledge {
-  background-color: #e5e5f7;
+  background-color: var(--inverse-theme-color);
   opacity: 0.8;
-  background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
-  background-size: 20px 20px;
-  background-position: 0 0, 10px 10px;
+  background-image: radial-gradient(var(--highlight-color) 0.045rem, transparent 0.045rem), radial-gradient(var(--highlight-color) 0.045rem, var(--inverse-theme-color) 0.045rem);
+  background-size: 1.5rem 1.5rem;
+  background-position: 0 0, 0.5rem 0.5rem;
   padding: 2rem 0;
 }
 
 .knowledge-container {
   display: flex;
-  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
+  flex-direction: column-reverse;
   gap: 1rem;
 }
 
 .knowledge__message {
   text-align: center;
+  color: var(--inverse-text-color);
 }
 
 .knowledge__container-img {
@@ -246,6 +256,66 @@
 }
 
 /* End knowledge */
+
+/* Start price */
+
+.price {
+  text-align: center;
+}
+
+.price__offers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.price__offer {
+  background-color: var(--code-background-color);
+  width: 14rem;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+  color: var(--inverse-text-color);
+  gap: 1rem;
+}
+
+.price__offer--best {
+  width: 16rem;
+  background-color: var(--highlight-color);
+  color: var(--text-color);
+}
+
+
+.price__name {
+  font-weight: 300;
+  margin: 0;
+}
+
+.price__price {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.price__topics {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.price__topic {
+  margin: 0;
+}
+
+.price__button--best {
+  background-color: var(--inverse-theme-color);
+  color: var(--inverse-text-color);
+}
+
+.price__button--best:hover {
+  color: var(--text-color);
+}
+
+/* End price */
 
 @media (min-width: 854px) {
 
@@ -284,14 +354,16 @@
   }
 
   /* End main-cover */
-  
+
   /* Start knowledge */
   .knowledge {
     padding: 4rem 0;
   }
+
   .knowledge-container {
     flex-direction: row;
     gap: 2rem;
   }
+
   /* End knowledge */
 }
