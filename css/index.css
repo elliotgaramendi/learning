@@ -16,18 +16,27 @@
 
 /* Start Common Styles */
 .header-nav-container,
-.main-cover-container {
+.main-cover-container,
+.about-container {
   padding: 0 2rem;
 }
 
 .main-cover__title,
-.main-cover__paragraph {
+.main-cover__paragraph,
+.about__subtitle,
+.about__paragraph {
   letter-spacing: 0.1rem;
 }
 
 .header-nav__img,
-.main-cover__img {
+.main-cover__img,
+.about__img {
   width: 100%;
+}
+
+.about__title,
+.about__paragraph {
+  margin: 0;
 }
 
 /* End Common Styles */
@@ -119,7 +128,6 @@
 
 /* Start main-cover */
 .main {
-  min-height: 200vh;
   background-color: var(--theme-color);
 }
 
@@ -177,9 +185,35 @@
 
 /* End main-cover */
 
+/* Start about */
+.about {
+  text-align: center;
+}
+
+.about__topics {
+  padding: 2rem 0;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.about__topic {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: center;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.about__container-icon {
+  width: 3rem;
+}
+
+/* End about */
+
 @media (min-width: 854px) {
 
-  /* Start Header */
+  /* Start header */
   .header-nav-container,
   .main-cover-container {
     max-width: 1024px;
@@ -201,9 +235,12 @@
     display: none;
   }
 
+  /* End header */
+
+  /* Start main-cover */
   .main-cover__message {
     max-width: 654px;
   }
 
-  /* End Header */
+  /* End main-cover */
 }
