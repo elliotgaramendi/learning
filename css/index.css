@@ -35,12 +35,12 @@
 /* Start header */
 .header {
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
   padding: 0.5rem 0;
   transition: all 0.5s;
-  z-index: 100;
 }
 
 .header--scroll {
@@ -120,7 +120,7 @@
 /* Start main-cover */
 .main {
   min-height: 200vh;
-  background-color: var(--inverse-theme-color);
+  background-color: var(--theme-color);
 }
 
 .main-cover {
@@ -151,6 +151,8 @@
 }
 
 .main-cover__button {
+  position: relative;
+  z-index: 85;
   display: inline-block;
   background-color: var(--button-color);
   padding: 0.5rem 1rem;
@@ -158,6 +160,7 @@
   color: var(--text-color);
   border-radius: 0.5rem;
   transition: all 0.5s;
+  pointer-events: all;
 }
 
 .main-cover__button:hover {
@@ -177,7 +180,8 @@
 @media (min-width: 854px) {
 
   /* Start Header */
-  .header-nav-container {
+  .header-nav-container,
+  .main-cover-container {
     max-width: 1024px;
     margin: auto;
     padding: 0;
@@ -195,6 +199,10 @@
   .header-nav__close-icon,
   .header-nav__menu-icon {
     display: none;
+  }
+
+  .main-cover__message {
+    max-width: 654px;
   }
 
   /* End Header */
