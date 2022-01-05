@@ -323,7 +323,8 @@
   .header-nav-container,
   .main-cover-container,
   .about-container,
-  .knowledge-container {
+  .knowledge-container,
+  .price-container {
     max-width: 1024px;
     margin: auto;
     padding: 0;
