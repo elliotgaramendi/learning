@@ -328,7 +328,7 @@
 /* Start testimony */
 
 .testimony {
-  background-color: var(--inverse-theme-color);
+  background-color: var(--code-background-color);
 }
 
 .testimony-container {
@@ -362,7 +362,7 @@
   grid-row: 1/2;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 .testimony__body--show {
@@ -372,11 +372,15 @@
 
 .testimony__message {
   max-width: 16rem;
+  text-align: center;
 }
 
 .testimony__course {
   background-color: var(--highlight-color);
   color: var(--text-color);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: inline-block;
 }
 
 .testimony__picture {
@@ -398,11 +402,19 @@
 @media (min-width: 854px) {
 
   /* Start Common Styles */
+  .about,
+  .knowledge,
+  .price,
+  .testimony {
+    padding: 4rem 0;
+  }
+
   .header-nav-container,
   .main-cover-container,
   .about-container,
   .knowledge-container,
-  .price-container {
+  .price-container,
+  .testimony-container {
     max-width: 1024px;
     margin: auto;
     padding: 0;
@@ -435,9 +447,6 @@
   /* End main-cover */
 
   /* Start knowledge */
-  .knowledge {
-    padding: 4rem 0;
-  }
 
   .knowledge-container {
     flex-direction: row;
@@ -445,4 +454,30 @@
   }
 
   /* End knowledge */
+
+  /* Start testimony */
+  .testimony-container {
+    grid-template-columns: 4rem 1fr 4rem;
+  }
+
+  .testimony__container-arrow {
+    width: 3rem;
+  }
+
+  .testimony__body {
+    grid-template-columns: 1.5fr 1fr;
+    justify-self: stretch;
+  }
+
+  .testimony__message {
+    max-width: 80%;
+    text-align: left;
+  }
+
+  .testimony__picture {
+    width: 16rem;
+    height: 16rem;
+  }
+
+  /* End testimony */
 }
