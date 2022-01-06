@@ -5,7 +5,8 @@
   --button-color: #61dafb;
   --inverse-theme-color: #20232a;
   --inverse-text-color: #fff;
-  --code-background-color: rgba(40, 44, 52, 0.75);
+  --code-background-color: #282c34;
+  --code-background-color-transparent: rgba(40, 44, 52, 0.75);
   --highlight-boder-color: gold;
 }
 
@@ -17,7 +18,8 @@
 /* Start Common Styles */
 .about,
 .knowledge,
-.price {
+.price,
+.testimony {
   padding: 2rem 0;
 }
 
@@ -25,7 +27,8 @@
 .main-cover-container,
 .about-container,
 .knowledge-container,
-.price-container {
+.price-container,
+.testimony-container {
   padding: 0 2rem;
 }
 
@@ -39,20 +42,31 @@
   flex-direction: column;
 }
 
+.knowledge-container,
+.price__offers,
+.testimony__container-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .main-cover__title,
 .main-cover__paragraph,
 .about__subtitle,
 .about__paragraph,
 .knowledge__subtitle,
 .knowledge__paragraph,
-.price__subtitle {
+.price__subtitle,
+.testimony__subtitle,
+.testimony__review {
   letter-spacing: 0.1rem;
 }
 
 .header-nav__img,
 .main-cover__img,
 .about__img,
-.knowledge__img {
+.knowledge__img,
+.testimony__arrow {
   width: 100%;
 }
 
@@ -73,7 +87,7 @@
   color: var(--text-color);
   border-radius: 0.5rem;
   transition: all 0.5s;
-  pointer-events: all;
+  pointer-events: auto;
 }
 
 .main-cover__button:hover,
@@ -185,7 +199,7 @@
 }
 
 .main-cover__message {
-  background: var(--code-background-color);
+  background: var(--code-background-color-transparent);
   padding: 1rem;
   border-radius: 1rem;
 }
@@ -217,7 +231,7 @@
   display: grid;
   gap: 0.5rem;
   justify-items: center;
-  max-width: 260px;
+  width: 10rem;
   margin: 0 auto;
 }
 
@@ -238,9 +252,6 @@
 }
 
 .knowledge-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column-reverse;
   gap: 1rem;
 }
@@ -264,10 +275,7 @@
 }
 
 .price__offers {
-  display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
   gap: 2rem;
 }
 
@@ -316,6 +324,76 @@
 }
 
 /* End price */
+
+/* Start testimony */
+
+.testimony {
+  background-color: var(--inverse-theme-color);
+}
+
+.testimony-container {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr 2.5rem;
+  gap: 1rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.testimony__container-arrow {
+  background-color: var(--highlight-color);
+  border-radius: 0.5rem;
+  width: 2rem;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.testimony__container-arrow:hover {
+  background-color: var(--theme-color);
+}
+
+.testimony__body {
+  color: var(--inverse-text-color);
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 2em;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 2s ease-in-out;
+}
+
+.testimony__body--show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.testimony__message {
+  max-width: 16rem;
+}
+
+.testimony__course {
+  background-color: var(--highlight-color);
+  color: var(--text-color);
+}
+
+.testimony__picture {
+  width: 10rem;
+  height: 10rem;
+  margin: 0;
+}
+
+.testimony__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* End testimony */
+
 
 @media (min-width: 854px) {
 
