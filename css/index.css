@@ -20,7 +20,8 @@
 .knowledge,
 .price,
 .testimony,
-.questions {
+.questions,
+.learn {
   padding: 2rem 0;
 }
 
@@ -30,14 +31,16 @@
 .knowledge-container,
 .price-container,
 .testimony-container,
-.questions-container {
+.questions-container,
+.learn-container {
   padding: 0 2rem;
 }
 
 .header-nav__link-list,
 .main-cover,
 .main-cover-container,
-.price__offer {
+.price__offer,
+.learn-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,7 +86,8 @@
 
 .main-cover__button,
 .knowledge__button,
-.price__button {
+.price__button,
+.learn__button {
   position: relative;
   z-index: 85;
   display: inline-block;
@@ -98,7 +102,8 @@
 
 .main-cover__button:hover,
 .knowledge__button:hover,
-.price__button:hover {
+.price__button:hover,
+.learn__button:hover {
   background-color: var(--theme-color);
 }
 
@@ -476,6 +481,21 @@
 }
 
 /* End wave */
+
+/* Start learn */
+.learn {
+  background-color: var(--code-background-color);
+  color: var(--inverse-text-color);
+  text-align: center;
+}
+.learn-container {
+  gap: 1rem;
+}
+.learn__title,
+.learn__paragraph {
+  margin: 0;
+}
+/* End learn */
 
 @media (min-width: 854px) {
 
