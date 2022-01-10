@@ -461,6 +461,22 @@
 
 /* End questions */
 
+/* Start wave */
+.wave {
+  width: 100%;
+}
+
+.wave__wave {
+  display: flex;
+  width: 100%;
+}
+
+.wave__img {
+  width: 100%;
+}
+
+/* End wave */
+
 @media (min-width: 854px) {
 
   /* Start Common Styles */
