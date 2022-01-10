@@ -6,7 +6,7 @@
   --inverse-theme-color: #20232a;
   --inverse-text-color: #fff;
   --code-background-color: #282c34;
-  --code-background-color-transparent: rgba(40, 44, 52, 0.75);
+  --code-background-color-transparent: rgba(40, 44, 52, 0.749);
   --highlight-boder-color: gold;
 }
 
@@ -19,7 +19,8 @@
 .about,
 .knowledge,
 .price,
-.testimony {
+.testimony,
+.questions {
   padding: 2rem 0;
 }
 
@@ -28,7 +29,8 @@
 .about-container,
 .knowledge-container,
 .price-container,
-.testimony-container {
+.testimony-container,
+.questions-container {
   padding: 0 2rem;
 }
 
@@ -58,7 +60,10 @@
 .knowledge__paragraph,
 .price__subtitle,
 .testimony__subtitle,
-.testimony__review {
+.testimony__review,
+.questions__subtitle,
+.questions__paragraph,
+.questions__title {
   letter-spacing: 0.1rem;
 }
 
@@ -66,7 +71,8 @@
 .main-cover__img,
 .about__img,
 .knowledge__img,
-.testimony__arrow {
+.testimony__arrow,
+.questions__img {
   width: 100%;
 }
 
@@ -243,9 +249,9 @@
 
 /* Start knowledge */
 .knowledge {
-  background-color: var(--inverse-theme-color);
+  background-color: var(--code-background-color);
   opacity: 0.8;
-  background-image: radial-gradient(var(--highlight-color) 0.045rem, transparent 0.045rem), radial-gradient(var(--highlight-color) 0.045rem, var(--inverse-theme-color) 0.045rem);
+  background-image: radial-gradient(var(--highlight-color) 0.045rem, transparent 0.045rem), radial-gradient(var(--highlight-color) 0.045rem, var(--code-background-color) 0.045rem);
   background-size: 1.5rem 1.5rem;
   background-position: 0 0, 0.5rem 0.5rem;
   padding: 2rem 0;
@@ -280,7 +286,7 @@
 }
 
 .price__offer {
-  background-color: var(--code-background-color);
+  background-color: var(--inverse-theme-color);
   width: 14rem;
   border-radius: 1rem;
   padding: 2rem 1rem;
@@ -357,7 +363,7 @@
   grid-template-columns: 1fr;
   align-items: center;
   justify-items: center;
-  gap: 2em;
+  gap: 2rem;
   grid-column: 2/3;
   grid-row: 1/2;
   opacity: 0;
@@ -398,6 +404,62 @@
 
 /* End testimony */
 
+/* Start questions */
+.questions {
+  text-align: center;
+}
+
+.questions__questions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.questions__question-container {
+  text-align: left;
+  border: 0.1rem solid var(--inverse-theme-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.questions__question {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.questions__title {
+  margin: 0;
+}
+
+.questions__arrow {
+  display: flex;
+  background-color: var(--inverse-theme-color);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  transition: transform 0.2s;
+}
+
+.questions__arrow--rotate-180 {
+  transform: rotate(180deg);
+}
+
+.questions__answer {
+  margin: 0;
+  height: 0;
+  padding: 0 2rem;
+  transition: all 0.2s;
+}
+
+.questions__answer--open {
+  padding: 0 2rem 2rem 2rem;
+}
+
+/* End questions */
 
 @media (min-width: 854px) {
 

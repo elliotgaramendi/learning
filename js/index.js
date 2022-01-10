@@ -8,18 +8,18 @@ const documentReady = () => {
   window.addEventListener('scroll', headerScroll);
 
   const openMenu = () => {
-    const hnLinkList = document.querySelector('.header-nav__link-list');
-    hnLinkList.classList.add('header-nav__link-list--open');
+    const navLinkList = document.querySelector('.header-nav__link-list');
+    navLinkList.classList.add('header-nav__link-list--open');
   };
-  const hnMenuIcon = document.querySelector('.header-nav__menu-icon');
-  hnMenuIcon.addEventListener('click', openMenu);
+  const navMenuIcon = document.querySelector('.header-nav__menu-icon');
+  navMenuIcon.addEventListener('click', openMenu);
 
   const closeMenu = () => {
-    const hnLinkList = document.querySelector('.header-nav__link-list');
-    hnLinkList.classList.remove('header-nav__link-list--open');
+    const navLinkList = document.querySelector('.header-nav__link-list');
+    navLinkList.classList.remove('header-nav__link-list--open');
   };
-  const hnCloseIcon = document.querySelector('.header-nav__close-icon');
-  hnCloseIcon.addEventListener('click', closeMenu);
+  const navCloseIcon = document.querySelector('.header-nav__close-icon');
+  navCloseIcon.addEventListener('click', closeMenu);
   // End header
 
   // Start testimony
@@ -46,8 +46,25 @@ const documentReady = () => {
   arrowBefore.addEventListener('click', () => {
     changePosition(-1);
   });
-
   // End testimony
+
+  // Start questions
+  const questions = [...document.querySelectorAll('.questions__question')];
+  questions.map((question) => {
+    question.addEventListener('click', () => {
+      let height = 0;
+      let answer = question.nextElementSibling;
+
+      if (answer.clientHeight === 0) {
+        height = answer.scrollHeight;
+      }
+
+      answer.classList.toggle('questions__answer--open');
+      question.children[1].classList.toggle('questions__arrow--rotate-180');
+      answer.style.height = `${height}px`;
+    });
+  });
+  // End questions
 };
 
 document.addEventListener('DOMContentLoaded', documentReady);
