@@ -567,6 +567,7 @@
   font-weight: bold;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 .footer-social-copyright {
@@ -612,7 +613,8 @@
   .price-container,
   .testimony-container,
   .questions-container,
-  .learn-container {
+  .learn-container,
+  .footer-container {
     max-width: 1024px;
     margin: auto;
     padding: 0;
@@ -678,4 +680,18 @@
   }
 
   /* End testimony */
+
+  /* Start footer */
+  .footer-container {
+    align-items: stretch;
+    justify-content: stretch;
+  }
+  .footer-nav-form,
+  .footer-form__inputs {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+
+  /* End footer */
 }
