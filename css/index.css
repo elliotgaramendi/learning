@@ -467,7 +467,8 @@
   .about,
   .knowledge,
   .price,
-  .testimony {
+  .testimony,
+  .questions {
     padding: 4rem 0;
   }
 
@@ -476,7 +477,8 @@
   .about-container,
   .knowledge-container,
   .price-container,
-  .testimony-container {
+  .testimony-container,
+  .questions-container {
     max-width: 1024px;
     margin: auto;
     padding: 0;
@@ -532,7 +534,7 @@
   }
 
   .testimony__message {
-    max-width: 80%;
+    max-width: 400px;
     text-align: left;
   }
 
