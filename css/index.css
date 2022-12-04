@@ -558,6 +558,7 @@
 }
 
 .footer-copyright__title {
+  color: var(--inverse-text-color);
   font-size: 0.75rem;
   margin: 0;
 }

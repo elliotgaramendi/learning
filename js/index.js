@@ -1,25 +1,31 @@
 'use strict';
 const documentReady = () => {
   // Start header
+  const navMenuIcon = document.querySelector('.header-nav__menu-icon');
+  const navCloseIcon = document.querySelector('.header-nav__close-icon');
+  const navLinkItems = document.querySelectorAll('.header-nav__link-item');
+
   const headerScroll = () => {
     const header = document.querySelector('.header');
     header.classList.toggle('header--scroll', window.scrollY > 0);
   };
-  window.addEventListener('scroll', headerScroll);
 
   const openMenu = () => {
     const navLinkList = document.querySelector('.header-nav__link-list');
     navLinkList.classList.add('header-nav__link-list--open');
   };
-  const navMenuIcon = document.querySelector('.header-nav__menu-icon');
   navMenuIcon.addEventListener('click', openMenu);
 
   const closeMenu = () => {
     const navLinkList = document.querySelector('.header-nav__link-list');
     navLinkList.classList.remove('header-nav__link-list--open');
   };
-  const navCloseIcon = document.querySelector('.header-nav__close-icon');
+
+  window.addEventListener('scroll', headerScroll);
   navCloseIcon.addEventListener('click', closeMenu);
+  navLinkItems.forEach((element) => {
+    element.addEventListener('click', closeMenu);
+  });
   // End header
 
   // Start testimony
