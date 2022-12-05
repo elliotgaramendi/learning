@@ -222,7 +222,7 @@
 .cover {
   position: relative;
   min-height: 100vh;
-  background-image: url('../img/reactjswallpaper.png');
+  background-image: url('https://i.postimg.cc/HnqmQQTB/react-01-01.png');
   background-size: cover;
   background-position: center;
   color: var(--inverse-text-color);
