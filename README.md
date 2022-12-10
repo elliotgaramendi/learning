@@ -12,7 +12,7 @@ Página de Aprendizaje de Tecnología, donde podrás adquirir cursos. La página
   - cd learning-technologies
   - Levantar la web en un servidor y disfrutar
 
-## 👨‍💻 Tecnologías Usadas 👨‍💻
+## 👨‍💻 Tecnologías usadas 👨‍💻
 <table>
   <thead>
     <tr>
