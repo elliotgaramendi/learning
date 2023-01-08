@@ -7,7 +7,7 @@
   --inverse-text-color: #fff;
   --code-background-color: #282c34;
   --code-background-color-transparent: rgba(40, 44, 52, 0.749);
-  --highlight-boder-color: gold;
+  --highlight-border-color: gold;
   scroll-behavior: smooth;
 }
 
@@ -160,7 +160,7 @@
 .footer-nav__link:hover,
 .footer-social____link:hover {
   color: var(--highlight-color);
-  border-bottom: 0.2rem solid var(--highlight-boder-color);
+  border-bottom: 0.2rem solid var(--highlight-border-color);
 }
 
 /* End Common Styles */
@@ -224,7 +224,7 @@
 .cover {
   position: relative;
   min-height: 100vh;
-  background-image: url('https://i.postimg.cc/HnqmQQTB/react-01-01.png');
+  background-image: url('https://i.postimg.cc/x9MyhM3D/react-system.webp');
   background-size: cover;
   background-position: center;
   color: var(--inverse-text-color);
@@ -463,11 +463,12 @@
   border-radius: 50%;
   min-width: 2rem;
   min-height: 2rem;
+  transform: rotate(180deg);
   transition: transform 0.25s;
 }
 
 .questions__arrow--rotate-180 {
-  transform: rotate(180deg);
+  transform: rotate(0);
 }
 
 .questions__answer {
